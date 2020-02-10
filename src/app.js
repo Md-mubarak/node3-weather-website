@@ -8,6 +8,9 @@ const forecast = require('./utils/forecast')
 // console.log(path.join(__dirname,'../public'))
 
 const app = express() 
+const port = process.env.PORT || 3000
+
+// define paths for Express confiq
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
@@ -139,6 +142,10 @@ app.get('*',(req,res) => {
     })
 })
 
-app.listen(3000, ()=> {
-   console.log('server is an port 3000')
+// app.listen(3000, ()=> {
+//    console.log('server is an port 3000')
+// }) // used to start a server
+
+app.listen(port, ()=> {
+   console.log('server is an port ' + port)
 }) // used to start a server
